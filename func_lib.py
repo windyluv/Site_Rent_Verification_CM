@@ -4,6 +4,15 @@ import xlrd
 import xlwt
 import math
 import datetime
+import time
+
+def timer(func):
+    def wrapper():
+        start=time.time()
+        func()
+        end=time.time()
+        return end-start
+    return wrapper
 
 def date_convert(org_date):
     if type(org_date)== float:
